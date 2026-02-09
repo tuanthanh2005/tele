@@ -1,90 +1,46 @@
 @extends('layouts.app')
 
-@section('title', 'Blog - Hướng Dẫn Kiếm Tiền Với Bot Telegram')
-@section('meta_description', 'Blog hướng dẫn kiếm tiền online với bot Telegram, affiliate marketing, passive income.')
+@section('title', 'Blog Bot Telegram - Kiến Thức Đầu Tư & Công Nghệ 2026')
+@section('meta_description', 'Tổng hợp kiến thức về Bot Telegram, Bot Crypto, Bot Chứng Khoán. Hướng dẫn cài đặt và sử dụng bot hiệu quả để kiếm tiền tự động.')
+@section('meta_keywords', 'blog bot telegram, kiến thức crypto, đầu tư chứng khoán, hướng dẫn bot')
 
 @section('content')
-<div class="bg-gray-50 py-12">
+<div class="bg-gray-50 min-h-screen py-12">
     <div class="container mx-auto px-4">
-        <!-- Header -->
         <div class="text-center mb-12">
-            <h1 class="text-5xl font-bold mb-4">Blog</h1>
-            <p class="text-xl text-gray-600">Hướng dẫn kiếm tiền với bot Telegram</p>
+            <h1 class="text-4xl font-extrabold text-gray-900 mb-4">Blog & Kiến Thức</h1>
+            <p class="text-lg text-gray-600 max-w-2xl mx-auto">Chia sẻ kinh nghiệm đầu tư, hướng dẫn sử dụng Bot Telegram và cập nhật xu hướng công nghệ mới nhất 2026.</p>
         </div>
 
-        @if($posts->count() > 0)
-        <!-- Posts Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             @foreach($posts as $post)
-            <div class="bg-white rounded-2xl shadow-lg overflow-hidden card-hover">
-                @if($post->thumbnail)
-                <img src="{{ $post->thumbnail }}" alt="{{ $post->title }}" class="w-full h-48 object-cover">
-                @else
-                <div class="h-48 bg-gradient-to-br from-purple-400 to-indigo-600 flex items-center justify-center">
-                    <span class="text-6xl">📝</span>
-                </div>
-                @endif
-                
-                <div class="p-6">
-                    <div class="flex items-center gap-2 mb-3 text-sm text-gray-500">
-                        <span>📅 {{ $post->published_at->format('d/m/Y') }}</span>
-                        <span>•</span>
-                        <span>👁️ {{ $post->views }} lượt xem</span>
+            <article class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition duration-300 transform hover:-translate-y-1">
+                <a href="{{ route('blog.show', $post['slug']) }}" class="block">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="{{ $post['image'] }}" alt="{{ $post['title'] }}" class="w-full h-full object-cover transform hover:scale-110 transition duration-500">
+                        <div class="absolute top-4 left-4">
+                            <span class="bg-purple-600 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">{{ $post['category'] }}</span>
+                        </div>
                     </div>
-                    
-                    <h3 class="text-xl font-bold mb-3">{{ $post->title }}</h3>
-                    
-                    @if($post->excerpt)
-                    <p class="text-gray-600 mb-4">{{ Str::limit($post->excerpt, 120) }}</p>
-                    @else
-                    <p class="text-gray-600 mb-4">{{ Str::limit(strip_tags($post->content), 120) }}</p>
-                    @endif
-                    
-                    <a href="{{ route('blog.show', $post->slug) }}" class="text-purple-600 font-bold hover:underline">
-                        Đọc tiếp →
+                </a>
+                <div class="p-6">
+                    <div class="flex items-center text-sm text-gray-500 mb-3">
+                        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                        {{ $post['date'] }}
+                    </div>
+                    <h2 class="text-xl font-bold text-gray-900 mb-3 line-clamp-2 hover:text-purple-600 transition">
+                        <a href="{{ route('blog.show', $post['slug']) }}">{{ $post['title'] }}</a>
+                    </h2>
+                    <p class="text-gray-600 mb-4 line-clamp-3 text-sm">
+                        {{ $post['excerpt'] }}
+                    </p>
+                    <a href="{{ route('blog.show', $post['slug']) }}" class="inline-flex items-center text-purple-600 font-semibold hover:text-purple-800 transition">
+                        Đọc tiếp
+                        <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                     </a>
                 </div>
-            </div>
+            </article>
             @endforeach
-        </div>
-
-        <!-- Pagination -->
-        <div class="flex justify-center">
-            {{ $posts->links() }}
-        </div>
-        
-        @else
-        <!-- Empty State -->
-        <div class="bg-white rounded-2xl p-12 text-center">
-            <div class="text-6xl mb-4">📝</div>
-            <h2 class="text-2xl font-bold mb-4">Chưa Có Bài Viết</h2>
-            <p class="text-gray-600 mb-6">Chúng tôi đang chuẩn bị nội dung chất lượng cho bạn!</p>
-            <a href="{{ route('home') }}" class="inline-block bg-purple-600 text-white px-8 py-3 rounded-full font-bold hover:bg-purple-700 transition">
-                Về Trang Chủ
-            </a>
-        </div>
-        @endif
-
-        <!-- Categories (Coming Soon) -->
-        <div class="mt-12 bg-white rounded-2xl p-8">
-            <h2 class="text-2xl font-bold mb-6">Chủ Đề Phổ Biến</h2>
-            <div class="flex flex-wrap gap-3">
-                <a href="#" class="bg-purple-100 text-purple-600 px-4 py-2 rounded-full hover:bg-purple-200 transition">
-                    #BotTelegram
-                </a>
-                <a href="#" class="bg-purple-100 text-purple-600 px-4 py-2 rounded-full hover:bg-purple-200 transition">
-                    #KiếmTiềnOnline
-                </a>
-                <a href="#" class="bg-purple-100 text-purple-600 px-4 py-2 rounded-full hover:bg-purple-200 transition">
-                    #AffiliateMarketing
-                </a>
-                <a href="#" class="bg-purple-100 text-purple-600 px-4 py-2 rounded-full hover:bg-purple-200 transition">
-                    #PassiveIncome
-                </a>
-                <a href="#" class="bg-purple-100 text-purple-600 px-4 py-2 rounded-full hover:bg-purple-200 transition">
-                    #Crypto
-                </a>
-            </div>
         </div>
     </div>
 </div>

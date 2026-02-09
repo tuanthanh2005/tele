@@ -69,17 +69,17 @@
                 </div>
                 @endif
 
-                <!-- CTA Buttons -->
+                                <!-- CTA Buttons -->
                 <div class="space-y-4">
                     <a href="{{ route('orders.create', $product->slug) }}" class="block w-full bg-gradient-to-r from-purple-600 to-indigo-600 text-white text-center px-8 py-4 rounded-full font-bold text-lg hover:shadow-2xl transition transform hover:scale-105">
-                        🛒 Mua Ngay - {{ number_format($product->price) }}đ
+                        🛒 Mua Ngay - Nhận Link Tải
                     </a>
-                    
-                    @if($product->demo_link)
-                    <a href="https://{{ $product->demo_link }}" target="_blank" class="block w-full bg-white border-2 border-purple-600 text-purple-600 text-center px-8 py-4 rounded-full font-bold text-lg hover:bg-purple-50 transition">
-                        🎮 Xem Demo Bot
+                    <div class="text-sm text-gray-600 text-center">
+                        Link download gửi qua email sau khi xác nhận thanh toán (5–30 phút).
+                    </div>
+<a href="https://t.me/specademy" target="_blank" class="block w-full bg-gray-100 text-gray-800 text-center px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-200 transition">
+                        ✉️ Tư Vấn Nhanh Trên Telegram
                     </a>
-                    @endif
                 </div>
 
                 <!-- Trust Badges -->
@@ -90,39 +90,36 @@
                     </div>
                     <div>
                         <div class="text-3xl mb-2">🔒</div>
-                        <div class="text-sm font-medium">An Toàn 100%</div>
+                        <div class="text-sm font-medium">Giao link qua email</div>
                     </div>
                     <div>
                         <div class="text-3xl mb-2">💬</div>
-                        <div class="text-sm font-medium">Support 24/7</div>
+                        <div class="text-sm font-medium">Ho tro 1 thang</div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Additional Info Tabs -->
+                <!-- Purchase Flow + Value -->
         <div class="bg-white rounded-2xl p-8 mb-12">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">✅ Quy Trình Mua Hàng</h3>
+                    <ol class="space-y-2 text-gray-600">
+                        <li>1. Điền thông tin và tạo đơn hàng</li>
+                        <li>2. Chuyển khoản theo hướng dẫn</li>
+                        <li>3. Nhận link tải qua email</li>
+                    </ol>
+                </div>
+                
                 <div>
                     <h3 class="text-xl font-bold mb-4">📦 Bạn Nhận Được Gì?</h3>
                     <ul class="space-y-2 text-gray-600">
                         <li>✓ Full source code Python</li>
-                        <li>✓ File README.md chi tiết</li>
-                        <li>✓ Hướng dẫn cài đặt từ A-Z</li>
+                        <li>✓ Hướng dẫn cài đặt từ A–Z</li>
+                        <li>✓ Template bot & các file cần thiết</li>
                         <li>✓ Hướng dẫn kiếm tiền</li>
-                        <li>✓ Video demo</li>
-                        <li>✓ Support group Telegram</li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <h3 class="text-xl font-bold mb-4">💰 Cách Kiếm Tiền</h3>
-                    <ul class="space-y-2 text-gray-600">
-                        <li>✓ Affiliate marketing (tích hợp sẵn)</li>
-                        <li>✓ Bán premium features</li>
-                        <li>✓ Quảng cáo trong bot</li>
-                        <li>✓ Lead generation</li>
-                        <li>✓ Sponsored content</li>
+                        <li>✓ Support 1 tháng</li>
                     </ul>
                 </div>
                 
@@ -172,3 +169,9 @@
     </div>
 </div>
 @endsection
+
+
+
+
+
+

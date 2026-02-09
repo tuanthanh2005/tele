@@ -49,7 +49,7 @@
                 <div class="flex flex-col md:flex-row gap-8 items-center justify-center">
                     <!-- QR Code -->
                     <div class="bg-white p-2 rounded-lg shadow-sm border border-gray-200">
-                        <img src="https://img.vietqr.io/image/MB-0708910952-compact2.png?amount={{ $order->amount }}&addInfo={{ $order->order_code }}&accountName=TRAN%20THANH%20TUAN" 
+                        <img src="https://img.vietqr.io/image/MB-0783704196-compact2.png?amount={{ $order->amount }}&addInfo={{ $order->order_code }}&accountName=TRAN%20THANH%20TUAN" 
                              alt="VietQR Payment" 
                              class="w-64 h-auto">
                     </div>
@@ -62,7 +62,7 @@
                         </div>
                         <div>
                             <p class="text-sm text-gray-500">Số tài khoản</p>
-                            <p class="font-bold text-xl text-blue-800 tracking-wider">0708 9109 52</p>
+                            <p class="font-bold text-xl text-blue-800 tracking-wider">0783 704 196</p>
                         </div>
                         <div>
                             <p class="text-sm text-gray-500">Chủ tài khoản</p>
