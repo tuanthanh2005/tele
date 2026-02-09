@@ -53,6 +53,7 @@ return [
     */
 
     'url' => env('APP_URL', 'http://localhost'),
+    'download_base_url' => env('DOWNLOAD_BASE_URL', env('APP_URL', 'http://localhost')),
 
     /*
     |--------------------------------------------------------------------------
