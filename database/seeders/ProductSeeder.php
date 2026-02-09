@@ -16,7 +16,7 @@ class ProductSeeder extends Seeder
             'name' => 'Bot Telegram Crypto Alert',
             'slug' => 'bot-crypto-alert',
             'description' => 'Bot Telegram tự động cảnh báo giá cryptocurrency real-time. Hỗ trợ hàng trăm đồng coin, alert tùy chỉnh, thông tin airdrop mới nhất. Kiếm tiền tự động với affiliate Binance, OKX, Bybit.',
-            'features' => json_encode([
+            'features' => [
                 'Xem giá real-time hơn 100+ coins',
                 'Cảnh báo giá tự động 24/7',
                 'Thông tin airdrop mới nhất',
@@ -26,7 +26,7 @@ class ProductSeeder extends Seeder
                 'Hướng dẫn cài đặt chi tiết',
                 'Support 1 tháng miễn phí',
                 'Update miễn phí 6 tháng'
-            ]),
+            ],
             'price' => 3000000,
             'original_price' => 5000000,
             'demo_link' => 't.me/CryptoAlertDemoBot',
@@ -42,7 +42,7 @@ class ProductSeeder extends Seeder
             'name' => 'Bot Telegram Giá Vàng',
             'slug' => 'bot-gia-vang',
             'description' => 'Bot Telegram cập nhật giá vàng SJC, PNJ, DOJI real-time. Cảnh báo khi vàng tăng/giảm. Lịch sử giá vàng. Kiếm tiền với affiliate tiệm vàng online, bảo hiểm.',
-            'features' => json_encode([
+            'features' => [
                 'Giá vàng SJC, PNJ, DOJI real-time',
                 'Cảnh báo giá vàng tự động',
                 'Lịch sử giá vàng',
@@ -52,7 +52,7 @@ class ProductSeeder extends Seeder
                 'Hướng dẫn cài đặt',
                 'Support 1 tháng',
                 'Update miễn phí 6 tháng'
-            ]),
+            ],
             'price' => 2000000,
             'original_price' => 3000000,
             'demo_link' => 't.me/GoldPriceVNBot',
@@ -68,7 +68,7 @@ class ProductSeeder extends Seeder
             'name' => 'Bot Telegram Chứng Khoán',
             'slug' => 'bot-chung-khoan',
             'description' => 'Bot Telegram theo dõi giá cổ phiếu Việt Nam real-time. Cảnh báo giá, VN-Index, top tăng/giảm. Kiếm tiền với affiliate chứng khoán, khóa học đầu tư.',
-            'features' => json_encode([
+            'features' => [
                 'Giá cổ phiếu real-time',
                 'Cảnh báo giá cổ phiếu',
                 'VN-Index, HNX-Index',
@@ -79,7 +79,7 @@ class ProductSeeder extends Seeder
                 'Hướng dẫn cài đặt',
                 'Support 1 tháng',
                 'Update miễn phí 6 tháng'
-            ]),
+            ],
             'price' => 3000000,
             'original_price' => 5000000,
             'demo_link' => 't.me/StockVNBot',
